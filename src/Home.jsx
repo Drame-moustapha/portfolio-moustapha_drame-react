@@ -1,4 +1,4 @@
-import Navbar from "react-bootstrap/Navbar";
+import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Experience from "./components/Experiences.jsx";
@@ -13,11 +13,11 @@ export default function Home({ content }) {
             <Navbar />
             <Hero />
             <About content={content} />
-            <Experience />
-            <Skills />
+            <Experience content={content} />
+            <Skills content={content} />
             <Projects />
             <Certificats />
-            <Contact content={content} />
+            <Contact />
         </div>
     );
 }

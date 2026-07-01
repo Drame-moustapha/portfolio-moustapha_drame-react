@@ -5,11 +5,9 @@
   "type": "module",
   "dependencies": {
     "@emailjs/browser": "^4.0.0",
-    "bootstrap": "^5.3.8",
     "framer-motion": "^12.38.0",
     "i18next": "^23.7.6",
     "react": "^19.2.5",
-    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.50.0",
     "react-i18next": "^13.5.0",
