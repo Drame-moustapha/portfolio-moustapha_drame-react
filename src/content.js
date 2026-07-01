@@ -2,7 +2,7 @@ export const content = {
     fr: {
         aboutTitle: "À propos de moi",
         aboutText:
-            "Ingénieur en génie logiciel spécialisé en Data Science et Intelligence Artificielle, je conçois des applications web et des solutions data intelligentes.",
+            "etudiant doctorant en informatique| Ingénieur en génie logiciel spécialisé en Data Science et Intelligence Artificielle, je conçois des applications web et des solutions data intelligentes.",
         contactTitle: "Contact",
         send: "Envoyer",
     },

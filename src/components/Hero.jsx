@@ -1,44 +1,76 @@
-import { motion } from "framer-motion";
+import { Button } from "react-bootstrap";
+import { FiDownload, FiArrowRight } from "react-icons/fi";
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6">
+        <section className="vh-100 d-flex align-items-center bg-dark text-white">
 
-            <div className="max-w-xl">
-        <span className="bg-green-500 px-3 py-1 rounded-full text-sm">
-          Disponible
-        </span>
+            <div className="container">
 
-                <h1 className="text-5xl font-bold mt-4">
-                    Moustapha Dramé
-                </h1>
+                <div className="row align-items-center">
 
-                <h2 className="text-xl text-gray-400 mt-2">
-                    Ingénieur Full Stack & Data / IA
-                </h2>
+                    {/* TEXTE */}
+                    <div className="col-lg-6 text-center text-lg-start">
 
-                <p className="mt-4 text-gray-500">
-                    Ingénieur en Génie Logiciel spécialisé en Data Science & IA,
-                    avec une forte expertise en développement Full Stack et Data Engineering.
-                </p>
+                        <p className="text-info mb-2">
+                            Bonjour, je suis
+                        </p>
 
-                <div className="flex gap-3 mt-6">
-                    <button className="bg-white text-black px-5 py-2 rounded-xl">
-                        Contact
-                    </button>
-                    <button className="border px-5 py-2 rounded-xl">
-                        Projets
-                    </button>
+                        <h1 className="display-3 fw-bold">
+                            Moustapha
+                            <span className="d-block text-info">
+                                DRAME
+                            </span>
+                        </h1>
+
+                        <h4 className="fw-semibold mt-3">
+                            Ingénieur Génie Logiciel
+                        </h4>
+
+                        <p className="text-secondary mt-3">
+                            Développeur Full Stack spécialisé en
+                            Data Science et Intelligence Artificielle.
+                            Je conçois des applications web modernes,
+                            performantes et intelligentes.
+                        </p>
+
+                        {/* BOUTONS */}
+                        <div className="d-flex gap-3 mt-4 justify-content-center justify-content-lg-start">
+
+                            <Button variant="info" className="d-flex align-items-center gap-2 px-4 py-2">
+                                <FiDownload />
+                                CV
+                            </Button>
+
+                            <Button variant="outline-info" className="d-flex align-items-center gap-2 px-4 py-2">
+                                <FiArrowRight />
+                                Projets
+                            </Button>
+
+                        </div>
+
+                    </div>
+
+                    {/* IMAGE */}
+                    <div className="col-lg-6 text-center mt-5 mt-lg-0">
+
+                        <img
+                            src="/images/moustaphaDrame.jpg"
+                            alt="profil"
+                            className="img-fluid rounded-circle shadow-lg border border-info"
+                            style={{
+                                width: "320px",
+                                height: "320px",
+                                objectFit: "cover"
+                            }}
+                        />
+
+                    </div>
+
                 </div>
+
             </div>
 
-            <motion.img
-                src="/images/moustaphaDrame.jpg"
-                alt="profile"
-                className="w-64 rounded-2xl shadow-xl"
-                initial={{opacity: 0, scale: 0.8}}
-                animate={{opacity: 1, scale: 1}}
-            />
         </section>
     );
 }
