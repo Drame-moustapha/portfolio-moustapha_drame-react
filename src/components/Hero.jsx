@@ -2,10 +2,16 @@ import {
     FiDownload,
     FiArrowRight,
     FiGithub,
+    FiLinkedin,
     FiCpu
 } from "react-icons/fi";
 
-export default function Hero() {
+export default function Hero({ content }) {
+    const contact = content?.contact || {
+        github: "https://github.com/Drame-moustapha",
+        linkedin: "https://www.linkedin.com/in/moustaphadramekandji/",
+    };
+
     return (
         <section
             id="home"
@@ -56,58 +62,76 @@ export default function Hero() {
                             diabète et l'aide à la décision clinique en Afrique de l'Ouest.
                         </p>
 
+                        {/* Boutons d'action */}
                         <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
-                            <a
-                                href="/documents/CV_Moustapha_DRAME.pdf"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-2 bg-info text-black font-bold px-6 py-3 rounded-lg hover:opacity-90 transition"
+                        <a
+                            href="/documents/CV_Moustapha_DRAME.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center gap-2 bg-info text-black font-bold px-6 py-3 rounded-lg hover:opacity-90 transition"
                             >
-                                <FiDownload />
-                                Mon CV
-                            </a>
+                            <FiDownload />
+                            Mon CV ingénieur
+                        </a>
+                    <a
 
-                            <a
-                                href="#experience"
-                                className="flex items-center gap-2 border border-gray-500 px-6 py-3 rounded-lg hover:bg-white/10 transition"
-                            >
-                                Recherche
-                                <FiArrowRight />
-                            </a>
-                        </div>
+                        href="/cv-chercheur"
+                        className="flex items-center gap-2 border-2 border-info text-info font-bold px-6 py-3 rounded-lg hover:bg-info hover:text-black transition"
+                        >
+                        <FiDownload />
+                        Mon CV chercheur
+                    </a>
 
-                        {/* Réseaux */}
-                        <div className="flex gap-5 mt-8 justify-center lg:justify-start text-2xl">
-                            <a
-                                href="https://github.com/Drame-moustapha"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="hover:text-info transition"
-                                aria-label="GitHub"
-                            >
-                                <FiGithub />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* IMAGE */}
-                    <div className="lg:col-span-5 flex justify-center">
-                        <div className="relative inline-block">
-                            <div
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-info opacity-20"
-                                style={{ width: "400px", height: "400px" }}
-                            />
-                            <img
-                                src="/images/moustaphaDrame.jpg"
-                                alt="Moustapha DRAME"
-                                className="relative rounded-full shadow-lg border-4 border-info object-cover"
-                                style={{ width: "340px", height: "340px" }}
-                            />
-                        </div>
-                    </div>
-
-                </div>
+                        <a
+                    href="#experience"
+                    className="flex items-center gap-2 border border-gray-500 px-6 py-3 rounded-lg hover:bg-white/10 transition"
+                    >
+                    Recherche
+                    <FiArrowRight />
+                </a>
             </div>
-        </section>
-    );
+
+            {/* Réseaux */}
+            <div className="flex gap-5 mt-6 justify-center lg:justify-start text-2xl">
+            <a
+                href={contact.github}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-info transition"
+                aria-label="GitHub"
+                >
+                <FiGithub />
+            </a>
+            <a
+            href={contact.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-info transition"
+            aria-label="LinkedIn"
+            >
+            <FiLinkedin />
+        </a>
+</div>
+</div>
+
+    {/* IMAGE (sœur du bloc texte, pas imbriquée dedans) */}
+    <div className="lg:col-span-5 flex justify-center">
+        <div className="relative inline-block">
+            <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-info opacity-20"
+                style={{ width: "400px", height: "400px" }}
+            />
+            <img
+                src="/images/moustaphaDrame.jpg"
+                alt="Moustapha DRAME"
+                className="relative rounded-full shadow-lg border-4 border-info object-cover"
+                style={{ width: "340px", height: "340px" }}
+            />
+        </div>
+    </div>
+
+</div>
+</div>
+</section>
+);
 }

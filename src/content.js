@@ -49,7 +49,8 @@ export const content = {
                     "React.js",
                     "Angular",
                     "API REST",
-                    "Architecture Microservices"
+                    "Architecture Microservices",
+                    "Node.js"
 
                 ]
 
@@ -64,6 +65,7 @@ export const content = {
 
                     "Machine Learning",
                     "Deep Learning",
+                    "Big data",
                     "TensorFlow",
                     "Keras",
                     "PyTorch",
@@ -83,7 +85,8 @@ export const content = {
 
                     "PostgreSQL",
                     "MySQL",
-                    "MongoDB"
+                    "MongoDB",
+                    "Oracle"
 
                 ]
 
