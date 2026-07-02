@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { FiGithub, FiMail, FiSend } from "react-icons/fi";
+import { FiGithub,FiLinkedin, FiMail, FiSend } from "react-icons/fi";
 
-// ⚠️ À remplacer par tes identifiants EmailJS (https://www.emailjs.com/ → Email Services / Email Templates / Account)
+//  À remplacer par tes identifiants EmailJS (https://www.emailjs.com/ → Email Services / Email Templates / Account)
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
@@ -54,7 +54,7 @@ export default function Contact() {
                     href={`mailto:${CONTACT_EMAIL}`}
                     className="flex items-center gap-2 bg-info text-black font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition"
                 >
-                    <FiMail /> {CONTACT_EMAIL}
+                    <FiMail/> {CONTACT_EMAIL}
                 </a>
                 <a
                     href="https://github.com/Drame-moustapha"
@@ -62,7 +62,15 @@ export default function Contact() {
                     rel="noreferrer"
                     className="flex items-center gap-2 border border-gray-600 px-5 py-2.5 rounded-lg hover:bg-white/10 transition"
                 >
-                    <FiGithub /> GitHub
+                    <FiGithub/> GitHub
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/moustaphadramekandji/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 border border-gray-600 px-5 py-2.5 rounded-lg hover:bg-white/10 transition"
+                >
+                    <FiLinkedin /> LinkedIn
                 </a>
             </div>
 
@@ -73,7 +81,7 @@ export default function Contact() {
                 <div>
                     <label className="block text-sm text-gray-400 mb-1">Nom</label>
                     <input
-                        {...register("name", { required: "Ton nom est requis" })}
+                        {...register("name", {required: "Ton nom est requis" })}
                         className="w-full bg-gray-800 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-info"
                         placeholder="Ton nom"
                     />

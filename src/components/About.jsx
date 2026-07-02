@@ -39,12 +39,12 @@ export default function About({ content }) {
 
                 <div className="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
                     <h3 className="text-3xl font-bold text-info">Full Stack</h3>
-                    <p className="text-gray-400 mt-1">React · Spring Boot · Node.js</p>
+                    <p className="text-gray-400 mt-1">React ·Angular. Spring Boot · Node.js</p>
                 </div>
 
                 <div className="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
                     <h3 className="text-3xl font-bold text-info">Data / IA</h3>
-                    <p className="text-gray-400 mt-1">Machine Learning · Deep Learning</p>
+                    <p className="text-gray-400 mt-1">Machine Learning · Deep Learning . Big data</p>
                 </div>
 
             </div>

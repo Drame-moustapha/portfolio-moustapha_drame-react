@@ -5,11 +5,11 @@ const fallbackSkills = [
     },
     {
         title: "Data & Intelligence Artificielle",
-        items: ["Machine Learning", "Deep Learning", "TensorFlow", "Keras", "PyTorch", "Scikit-learn"],
+        items: ["Machine Learning", "Deep Learning", "Big data", "TensorFlow", "Keras", "PyTorch", "Scikit-learn"],
     },
     {
         title: "Bases de données",
-        items: ["PostgreSQL", "MySQL", "MongoDB"],
+        items: ["PostgreSQL", "MySQL", "MongoDB","Oracle"],
     },
     {
         title: "DevOps",

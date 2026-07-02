@@ -9,6 +9,7 @@ export default function Navbar() {
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
         { name: "Skills", href: "#skills" },
+        { name: "Formations", href: "#formations" },
         { name: "Certificats", href: "#certificats" },
         { name: "Contact", href: "#contact" },
     ];

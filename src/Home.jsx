@@ -6,6 +6,7 @@ import Skills from "./components/Skills.jsx";
 import Projects from "./components/Projects.jsx";
 import Certificats from "./components/Certificats.jsx";
 import Contact from "./components/Contact.jsx";
+import Formations from "./components/Formations.jsx";
 
 export default function Home({ content }) {
     return (
@@ -16,6 +17,7 @@ export default function Home({ content }) {
             <Experience content={content} />
             <Skills content={content} />
             <Projects />
+            <Formations />
             <Certificats />
             <Contact />
         </div>
