@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <title>Moustapha DRAME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function() {
+        try {
+          const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+            return;
+          }
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            return;
+          }
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (prefersDark) document.documentElement.classList.add('dark');
+        } catch (e) { /* silent fail */ }
+      })();
+    </script>
 </head>
 <body>
 <div id="root"></div>
