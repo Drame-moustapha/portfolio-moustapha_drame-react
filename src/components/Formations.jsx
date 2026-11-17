@@ -25,20 +25,29 @@ const fallbackFormations = [
             "Bases de données",
             "Gestion de projets informatiques",
             "Tests et qualité logicielle",
+            "Probabilités",
+            "Français",
+            "Anglais",
+            "Réseaux informatiques",
         ],
     },
     {
         date: "2018 – 2021",
         diplome: "Licence en Informatique",
         etablissement: "Université Assane Seck, Ziguinchor",
-        description: "Formation universitaire en informatique et en programmation.",
+        description: "Formation universitaire en informatique, sciences fondamentales et programmation.",
+        niveaux: [
+            { nom: "L1", date: "2018 – 2019" },
+            { nom: "L2", date: "2019 – 2020" },
+            { nom: "L3", date: "2020 – 2021" },
+        ],
         competences: [
-            "Algorithmique",
-            "Programmation",
-            "Développement web",
-            "Bases de données",
-            "Systèmes et réseaux",
-            "Modélisation informatique",
+            "Mathématiques : analyse",
+            "Mathématiques : algèbre",
+            "Physique",
+            "Statistiques avec R",
+            "Réseaux informatiques",
+            "Anglais",
         ],
     },
     {
@@ -82,6 +91,19 @@ export default function Formations({ content }) {
                             )}
                             {formation.description && (
                                 <p className="text-[var(--text)]/80 mt-3 leading-relaxed">{formation.description}</p>
+                            )}
+                            {formation.niveaux?.length > 0 && (
+                                <div className="mt-5">
+                                    <h4 className="text-sm font-semibold mb-3">Progression de la Licence</h4>
+                                    <ol className="grid grid-cols-1 sm:grid-cols-3 gap-3" aria-label="Années de la Licence">
+                                        {formation.niveaux.map((niveau) => (
+                                            <li key={niveau.nom} className="rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3">
+                                                <span className="block text-[var(--accent)] font-bold">{niveau.nom}</span>
+                                                <span className="text-sm text-[var(--muted)]">{niveau.date}</span>
+                                            </li>
+                                        ))}
+                                    </ol>
+                                </div>
                             )}
                             {formation.competences?.length > 0 && (
                                 <div className="mt-5">
