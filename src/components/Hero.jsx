@@ -1,4 +1,4 @@
-import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 export default function Hero({ content }) {
@@ -17,7 +17,8 @@ export default function Hero({ content }) {
                     <p className="hero-lead">Je suis <strong>Moustapha DRAME</strong>, doctorant et ingénieur logiciel. Je m’intéresse à l’intelligence artificielle, la science des données et aux technologies qui améliorent la santé et la société.</p>
                     <div className="hero-actions">
                         <a href="#projects" className="button-primary">Découvrir mes projets <FiArrowUpRight aria-hidden="true" /></a>
-                        <a href="/documents/CV_Moustapha_DRAME.pdf" target="_blank" rel="noopener noreferrer" className="button-secondary"><FiDownload aria-hidden="true" /> Télécharger mon CV</a>
+                        <a href="/documents/CV_Moustapha_DRAME.pdf" target="_blank" rel="noopener noreferrer" className="button-secondary"><FiDownload aria-hidden="true" /> CV ingénieur</a>
+                        <a href="/documents/CV_Moustapha_DRAME_chercheur.html" target="_blank" rel="noopener noreferrer" className="button-secondary"><FiFileText aria-hidden="true" /> CV chercheur</a>
                     </div>
                     <div className="hero-socials">
                         <span>Retrouvez-moi</span>
