@@ -35,15 +35,46 @@ const fallbackFormations = [
         date: "2018 – 2021",
         diplome: "Licence en Informatique",
         etablissement: "Université Assane Seck, Ziguinchor",
-        description: "Formation universitaire en informatique, sciences fondamentales et programmation.",
+        description: "Parcours universitaire présenté année par année, avec les disciplines et compétences travaillées.",
         niveaux: [
-            { nom: "L1", date: "2018 – 2019" },
-            { nom: "L2", date: "2019 – 2020" },
-            { nom: "L3", date: "2020 – 2021" },
+            {
+                nom: "Licence 1 (L1)",
+                date: "2018 – 2019",
+                parcours: "Mathématiques · Physique · Informatique",
+                competences: [
+                    "Mathématiques : analyse et algèbre",
+                    "Physique générale",
+                    "Bases de l'informatique et de la programmation",
+                    "Anglais",
+                ],
+            },
+            {
+                nom: "Licence 2 (L2)",
+                date: "2019 – 2020",
+                parcours: "Mathématiques · Statistiques · Informatique",
+                competences: [
+                    "Mathématiques et probabilités",
+                    "Statistiques avec R",
+                    "Programmation et algorithmique",
+                    "Physique",
+                    "Anglais",
+                ],
+            },
+            {
+                nom: "Licence 3 (L3)",
+                date: "2020 – 2021",
+                parcours: "Informatique · Réseaux · Statistiques",
+                competences: [
+                    "Réseaux informatiques",
+                    "Statistiques avec R",
+                    "Informatique et développement logiciel",
+                    "Mathématiques appliquées",
+                    "Anglais",
+                ],
+            },
         ],
         competences: [
-            "Mathématiques : analyse",
-            "Mathématiques : algèbre",
+            "Mathématiques : analyse et algèbre",
             "Physique",
             "Statistiques avec R",
             "Réseaux informatiques",
@@ -93,13 +124,27 @@ export default function Formations({ content }) {
                                 <p className="text-[var(--text)]/80 mt-3 leading-relaxed">{formation.description}</p>
                             )}
                             {formation.niveaux?.length > 0 && (
-                                <div className="mt-5">
-                                    <h4 className="text-sm font-semibold mb-3">Progression de la Licence</h4>
-                                    <ol className="grid grid-cols-1 sm:grid-cols-3 gap-3" aria-label="Années de la Licence">
+                                <div className="mt-5 space-y-4">
+                                    <h4 className="text-sm font-semibold">Détail des années de Licence</h4>
+                                    <ol className="grid grid-cols-1 gap-4" aria-label="Années et compétences de la Licence">
                                         {formation.niveaux.map((niveau) => (
-                                            <li key={niveau.nom} className="rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3">
-                                                <span className="block text-[var(--accent)] font-bold">{niveau.nom}</span>
-                                                <span className="text-sm text-[var(--muted)]">{niveau.date}</span>
+                                            <li key={niveau.nom} className="rounded-lg border border-[var(--border)] bg-[var(--bg)] p-4">
+                                                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                                                    <h5 className="font-bold text-[var(--accent)]">{niveau.nom}</h5>
+                                                    <span className="text-sm text-[var(--muted)]">{niveau.date}</span>
+                                                </div>
+                                                {niveau.parcours && (
+                                                    <p className="mt-2 font-medium">{niveau.parcours}</p>
+                                                )}
+                                                {niveau.competences?.length > 0 && (
+                                                    <ul className="mt-3 flex flex-wrap gap-2" aria-label={`Compétences de ${niveau.nom}`}>
+                                                        {niveau.competences.map((competence) => (
+                                                            <li key={competence} className="rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--muted)]">
+                                                                {competence}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </li>
                                         ))}
                                     </ol>
