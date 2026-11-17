@@ -1,44 +1,27 @@
 const fallbackSkills = [
-    {
-        title: "Développement logiciel",
-        items: ["Java", "Spring Boot", "React.js", "Angular", "API REST", "Architecture Microservices"],
-    },
-    {
-        title: "Data & Intelligence Artificielle",
-        items: ["Machine Learning", "Deep Learning", "Big data", "TensorFlow", "Keras", "PyTorch", "Scikit-learn"],
-    },
-    {
-        title: "Bases de données",
-        items: ["PostgreSQL", "MySQL", "MongoDB","Oracle"],
-    },
-    {
-        title: "DevOps",
-        items: ["Git", "Docker", "Jenkins", "CI/CD", "GitLab"],
-    },
+    { title: "Développement logiciel", intro: "Concevoir et livrer des applications robustes.", items: ["Java", "Spring Boot", "React.js", "Angular", "API REST", "Node.js", "Microservices"] },
+    { title: "Intelligence artificielle & data", intro: "Explorer les données et construire des modèles utiles.", items: ["Machine Learning", "Deep Learning", "Python", "TensorFlow", "PyTorch", "Scikit-learn", "Big Data"] },
+    { title: "Données & bases", intro: "Structurer, exploiter et valoriser l'information.", items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle", "Statistiques avec R"] },
+    { title: "Outils & méthodes", intro: "Travailler avec méthode, qualité et collaboration.", items: ["Git", "Docker", "Jenkins", "CI/CD", "GitLab", "Réseaux"] },
 ];
 
 export default function Skills({ content }) {
     const skills = content?.skills?.length ? content.skills : fallbackSkills;
-
     return (
-        <section id="skills" className="px-6 py-20 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-10 text-center">Compétences</h2>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {skills.map((group, i) => (
-                    <div key={i} className="bg-gray-900 p-5 rounded-xl hover:bg-gray-800 transition">
-                        <h3 className="font-semibold text-info mb-3">{group.title}</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {group.items.map((item, j) => (
-                                <span
-                                    key={j}
-                                    className="bg-gray-800 text-gray-300 text-sm px-2 py-1 rounded"
-                                >
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+        <section id="skills" className="content-section skills-section">
+            <div className="section-heading centered-heading">
+                <span className="section-kicker">04 / EXPERTISE</span>
+                <h2>Un profil <span>pluridisciplinaire.</span></h2>
+                <p>Des compétences complémentaires pour faire avancer des projets de bout en bout.</p>
+            </div>
+            <div className="skills-grid">
+                {skills.map((group, index) => (
+                    <article className="skill-card" key={group.title}>
+                        <span className="skill-number">0{index + 1}</span>
+                        <h3>{group.title}</h3>
+                        {group.intro && <p>{group.intro}</p>}
+                        <ul className="tag-list">{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                    </article>
                 ))}
             </div>
         </section>

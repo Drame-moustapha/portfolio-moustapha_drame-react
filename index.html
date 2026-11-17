@@ -1,29 +1,19 @@
 <!doctype html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <title>Moustapha DRAME</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      (function() {
-        try {
-          const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
-          if (saved === 'dark') {
-            document.documentElement.classList.add('dark');
-            return;
-          }
-          if (saved === 'light') {
-            document.documentElement.classList.remove('dark');
-            return;
-          }
-          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (prefersDark) document.documentElement.classList.add('dark');
-        } catch (e) { /* silent fail */ }
-      })();
-    </script>
-</head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Portfolio de Moustapha DRAME, doctorant en informatique et ingénieur logiciel. Recherche en intelligence artificielle, science des données et santé numérique." />
+    <meta property="og:title" content="Moustapha DRAME — Ingénieur logiciel & chercheur" />
+    <meta property="og:description" content="Découvrez les projets, le parcours et les recherches de Moustapha DRAME en informatique, IA et santé numérique." />
+    <meta property="og:type" content="website" />
+    <title>Moustapha DRAME — Ingénieur logiciel &amp; chercheur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
