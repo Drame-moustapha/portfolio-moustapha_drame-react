@@ -1,3 +1,17 @@
+const unchkExperience = {
+    date: "Février 2026 – Mai 2026",
+    poste: "STAGIAIRE INGÉNIEUR DE RECHERCHE – Ingénierie pédagogique numérique & Conception de jeux sérieux",
+    entreprise: "Université Numérique Cheikh Hamidou Kane (UN-CHK) | Sénégal",
+    description: "Projet de recherche-action : Intégration de la pédagogie active dans la scénarisation des cours en ligne à l’UN-CHK. Projet financé par le Fonds FARI/FAP de l’UN-CHK.",
+    missions: [
+        "Réalisation d’un état de l’art sur les jeux sérieux, la ludification, l’apprentissage de la logique combinatoire, la scénarisation pédagogique et les environnements informatiques pour l’apprentissage humain (EIAH).",
+        "Conception et prototypage d’un jeu sérieux dédié à l’apprentissage de la logique combinatoire à l’aide de SCENARI Topaze.",
+        "Conception des missions pédagogiques, des niveaux de progression et des mécanismes de rétroaction (feedback).",
+        "Participation au déploiement et à l’expérimentation du jeu auprès d’étudiants.",
+        "Environnement technique et méthodologique : SCENARI Topaze, ingénierie pédagogique, Serious Games, logique combinatoire, EIAH, pédagogie active, Design-Based Research (DBR), expérimentation et analyse des traces d’apprentissage.",
+    ],
+};
+
 const fallbackExperiences = [
     {
         date: "2026 — en cours",
@@ -5,12 +19,7 @@ const fallbackExperiences = [
         entreprise: "Université Assane Seck de Ziguinchor",
         missions: ["Recherche sur l'intelligence artificielle frugale et explicable", "Conception de systèmes d'aide à la décision clinique"],
     },
-    {
-        date: "2026",
-        poste: "Ingénieur de recherche — jeu sérieux en logique combinatoire",
-        entreprise: "UNCHK",
-        missions: ["Conception d'un jeu sérieux pédagogique", "Développement de scénarios interactifs", "Expérimentation auprès des apprenants"],
-    },
+    unchkExperience,
     {
         date: "2024 – 2025",
         poste: "Développeur Full Stack",
@@ -20,7 +29,10 @@ const fallbackExperiences = [
 ];
 
 export default function Experience({ content }) {
-    const experiences = content?.experiences?.length ? content.experiences : fallbackExperiences;
+    const sourceExperiences = content?.experiences?.length ? content.experiences : fallbackExperiences;
+    const experiences = sourceExperiences.map((exp) =>
+        exp.entreprise === "UNCHK" || exp.entreprise?.includes("UN-CHK") ? unchkExperience : exp
+    );
     return (
         <section id="experience" className="content-section section-tinted">
             <div className="section-heading centered-heading">
